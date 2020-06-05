@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.sara.restro.ui.fragment.SplashFragment"
+        android:label="fragment_beer_list"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_productListFragment"
+            app:destination="@id/product_list"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/main_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/product_list"
+        android:name="com.sara.restro.ui.fragment.ProductListFragment"
+        android:label="fragment_product_list"
+        tools:layout="@layout/fragment_products_list">
+        <action
+            android:id="@+id/action_productListFragment_to_beerDetailFragment"
+            app:destination="@id/beer_detail">
+            <argument
+                android:name="beerType"
+                android:defaultValue="Stella"
+                app:argType="string" />
+            <argument
+                android:name="imgUrl"
+                android:defaultValue="url"
+                app:argType="string" />
+            <argument
+                android:name="abv"
+                app:argType="float" />
+            <argument
+                android:name="desc"
+                android:defaultValue="desc"
+                app:argType="string" />
+            <argument
+                android:name="info"
+                android:defaultValue="info"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/beer_list"
+        android:name="com.sara.restro.ui.fragment.BeerListFragment"
+        android:label="fragment_beer_list"
+        tools:layout="@layout/fragment_beer_list">
+        <action
+            android:id="@+id/action_beerListFragment_to_beerDetailFragment"
+            app:destination="@id/beer_detail">
+            <argument
+                android:name="beerType"
+                android:defaultValue="Stella"
+                app:argType="string" />
+            <argument
+                android:name="imgUrl"
+                android:defaultValue="url"
+                app:argType="string" />
+            <argument
+                android:name="abv"
+                app:argType="float" />
+            <argument
+                android:name="desc"
+                android:defaultValue="desc"
+                app:argType="string" />
+            <argument
+                android:name="info"
+                android:defaultValue="info"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/beer_detail"
+        android:name="com.sara.restro.ui.fragment.BeerDetailFragment"
+        android:label="fragment_beer_detail"
+        tools:layout="@layout/fragment_beer_detail" />
+
+</navigation>

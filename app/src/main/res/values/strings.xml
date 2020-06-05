@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Craft Beer</string>
+    <string name="no_internet">Please check your internet connection</string>
+    <string name="abv">ABV - </string>
+    <string name="desc_title">Description</string>
+    <string name="info_title">Information</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.ProductListFragment">
+
+    <TextView
+        android:id="@+id/textViewConnectivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/margin_16dp"
+        android:text="@string/no_internet"
+        android:textColor="@color/red"
+        android:textSize="@dimen/beer_desc_size"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progress" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="vertical"
+        android:padding="4dp"
+        android:visibility="gone"
+        tools:listitem="@layout/products_list_item" />
+
+</FrameLayout>
